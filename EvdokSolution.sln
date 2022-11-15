@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evdok", "Evdok\Evdok.csproj", "{223EFDBA-1A85-4CA1-A5A9-9B1988041C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evdok.BLL", "Evdok.BLL\Evdok.BLL.csproj", "{35A57A43-3901-4A81-BDD8-B36151FE74F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evdok.DLL", "Evdok.DLL\Evdok.DLL.csproj", "{B5D9D0C4-6AFD-425B-ACCD-7C79BF60AC73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{223EFDBA-1A85-4CA1-A5A9-9B1988041C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223EFDBA-1A85-4CA1-A5A9-9B1988041C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223EFDBA-1A85-4CA1-A5A9-9B1988041C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223EFDBA-1A85-4CA1-A5A9-9B1988041C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A57A43-3901-4A81-BDD8-B36151FE74F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A57A43-3901-4A81-BDD8-B36151FE74F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A57A43-3901-4A81-BDD8-B36151FE74F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A57A43-3901-4A81-BDD8-B36151FE74F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D9D0C4-6AFD-425B-ACCD-7C79BF60AC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D9D0C4-6AFD-425B-ACCD-7C79BF60AC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D9D0C4-6AFD-425B-ACCD-7C79BF60AC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D9D0C4-6AFD-425B-ACCD-7C79BF60AC73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CBEC107-2C66-4530-AACB-B47434DB3566}
+	EndGlobalSection
+EndGlobal
