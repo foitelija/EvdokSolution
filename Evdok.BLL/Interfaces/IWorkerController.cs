@@ -1,5 +1,4 @@
-﻿using Evdok.DLL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Evdok.BLL.Interfaces
 {
-    public interface IExcelController
+    public interface IWorkerController
     {
-        Task<List<ReportModel>> readReportsFromExcelToModel();
+        Task EvdokimStartWork();
     }
 }

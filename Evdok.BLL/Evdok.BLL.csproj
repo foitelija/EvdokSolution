@@ -40,6 +40,7 @@
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.5.0.5\lib\net46\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -72,7 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Interfaces\IExcelController.cs" />
+    <Compile Include="Interfaces\IWorkerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
