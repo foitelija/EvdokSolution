@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evdok.DLL
+namespace Evdok.BLL.Controllers
 {
-    public class Class1
+    public class ExcelController
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evdok.BLL
+namespace Evdok.ViewModel
 {
-    public class Class1
+    public class MainViewModel
     {
     }
 }
