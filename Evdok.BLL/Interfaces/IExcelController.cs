@@ -9,6 +9,6 @@ namespace Evdok.BLL.Interfaces
 {
     public interface IExcelController
     {
-        Task<List<ReportModel>> readReportsFromExcelToModel();
+        List<ReportModel> readReportsFromExcelToModel();
     }
 }

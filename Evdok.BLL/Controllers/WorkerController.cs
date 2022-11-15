@@ -1,4 +1,5 @@
 ﻿using Evdok.BLL.Interfaces;
+using Evdok.DLL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,16 @@ namespace Evdok.BLL.Controllers
 {
     public class WorkerController : IWorkerController
     {
-        public Task EvdokimStartWork()
+        ExcelController _excelController = new ExcelController();
+
+        List<ReportModel> _reportModels = new List<ReportModel>();
+
+        public async Task EvdokimStartWork()
         {
-            MessageBox.Show("Дошли до " + typeof(WorkerController));
-            return null;
+            var reportResponse =  _excelController.readReportsFromExcelToModel();
+            _reportModels = reportResponse;
+
+
         }
     }
 }

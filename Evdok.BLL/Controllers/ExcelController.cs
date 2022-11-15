@@ -5,18 +5,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using Ganss.Excel;
+using NPOI.SS.Formula.Functions;
 
 namespace Evdok.BLL.Controllers
 {
     public class ExcelController : IExcelController
     {
+
+        public List<ReportModel> reportModels;
+
         public ExcelController()
         {
 
         }
-        public Task<List<ReportModel>> readReportsFromExcelToModel()
+        public List<ReportModel> readReportsFromExcelToModel()
         {
-            throw new NotImplementedException();
+
+            var reports = new ExcelMapper("D:\\Evdokimi\\Report.xlsx") { HeaderRow = false}.Fetch<ReportModel>().ToList();
+
+            return reports;
         }
     }
 }

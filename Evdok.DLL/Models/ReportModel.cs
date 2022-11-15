@@ -9,17 +9,17 @@ namespace Evdok.DLL.Models
 {
     public class ReportModel
     {
-        [Column(Letter = "D")]
-        private string EqId { get; set; } = string.Empty;
-        [Column(Letter = "E")]
-        private string ReceiptDate { get; set; } = string.Empty;
-        [Column(Letter = "F")]
-        private string Currency { get; set; } = string.Empty;
-        [Column(Letter = "G")]
-        private double ReceiptMoneyCount { get; set; }
-        [Column(Letter = "I")]
-        private int DaysHavePassed { get; set; }
-        [Column(Letter = "M")]
-        private string SpecialUnicode { get; set; } = string.Empty;
+        [Column(4)]
+        public string EqId { get; set; } = string.Empty;
+        [Column(5)]
+        public string ReceiptDate { get; set; } = string.Empty;
+        [Column(6)]
+        public string Currency { get; set; } = string.Empty;
+        [Column(7)]
+        public double ReceiptMoneyCount { get; set; }
+        [Column(9)]
+        public int DaysHavePassed { get; set; }
+        [Column(13)]
+        public string SpecialUnicode { get; set; } = string.Empty;
     }
 }
