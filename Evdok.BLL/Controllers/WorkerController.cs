@@ -13,14 +13,12 @@ namespace Evdok.BLL.Controllers
     {
         ExcelController _excelController = new ExcelController();
 
-        List<ReportModel> _reportModels = new List<ReportModel>();
+        public List<ReportModel> _reportModels;
 
         public async Task EvdokimStartWork()
         {
             var reportResponse =  _excelController.readReportsFromExcelToModel();
             _reportModels = reportResponse;
-
-
         }
     }
 }
