@@ -8,6 +8,6 @@ namespace Evdok.BLL.Interfaces
 {
     public interface IWorkerController
     {
-        Task EvdokimStartWork();
+        Task EvdokimStartWork(string Medium);
     }
 }

@@ -6,12 +6,10 @@
         xmlns:local="clr-namespace:Evdok"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        WindowStyle="None" ResizeMode="NoResize" Background="#181735">
+         ResizeMode="NoResize" Background="#181735">
     <Grid>
-
-
-        
-        <Button Command="{Binding StartCommand}" Content="Button" HorizontalAlignment="Left" Margin="400,257,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
-
+        <Button Command="{Binding StartCommand}" Content="Button" HorizontalAlignment="Left" Margin="544,329,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
+        <Button Command="{Binding ShutdownWindowCommand}" Content="Exit" HorizontalAlignment="Left" Margin="754,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox Command="{Binding CheckMediumCommand}" CommandParameter="{Binding ElementName=checkMedium}" Name="checkMedium" Content="Средний бизнес" HorizontalAlignment="Left" Margin="440,162,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>
