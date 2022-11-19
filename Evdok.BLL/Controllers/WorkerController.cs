@@ -12,6 +12,7 @@ namespace Evdok.BLL.Controllers
     public class WorkerController : IWorkerController
     {
         ExcelController _excelController = new ExcelController();
+        SqlController _sqlController = new SqlController();
 
         string middleBussiness = string.Empty;
 
@@ -20,6 +21,7 @@ namespace Evdok.BLL.Controllers
         public async Task EvdokimStartWork(string Medium)
         {
             middleBussiness = Medium;
+            var sqlQueryList = _sqlController.getValuesFromXokSqlDatabase("234006");
             var reportResponse =  _excelController.readReportsFromExcelToModel();
             _reportModels = reportResponse;
         }
