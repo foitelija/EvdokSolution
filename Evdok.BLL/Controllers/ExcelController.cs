@@ -23,7 +23,7 @@ namespace Evdok.BLL.Controllers
 
         public List<ReportModel> readReportsFromExcelToModel()
         {
-            var reports = new ExcelMapper("D:\\Evdokimi\\Report.xlsx") { HeaderRow = false}.Fetch<ReportModel>().ToList();
+            var reports = new ExcelMapper(DialogFileController.GetReportPath()) { HeaderRow = false}.Fetch<ReportModel>().ToList();
             return reports;
         }
     }

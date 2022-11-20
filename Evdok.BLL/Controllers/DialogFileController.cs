@@ -83,14 +83,6 @@ namespace Evdok.BLL.Controllers
                 return true;
             }
             return false;
-
-            //    OpenFileDialog openFileDialog = new OpenFileDialog();
-            //if (openFileDialog.ShowDialog() == true)
-            //{
-            //    CsvFilePath = openFileDialog.;
-            //    return true;
-            //}
-            //return false;
         }
 
         public bool OpenPhoneFileDialog()
