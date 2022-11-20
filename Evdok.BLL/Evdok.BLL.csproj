@@ -208,9 +208,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Interfaces\IExcelController.cs" />
+    <Compile Include="Interfaces\IMailController.cs" />
     <Compile Include="Interfaces\ISqlController.cs" />
     <Compile Include="Interfaces\IWorkerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

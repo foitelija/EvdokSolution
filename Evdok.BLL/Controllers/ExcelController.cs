@@ -13,7 +13,6 @@ namespace Evdok.BLL.Controllers
 {
     public class ExcelController : IExcelController
     {
-
         public List<ReportModel> reportModels;
 
         public ExcelController()
@@ -23,9 +22,7 @@ namespace Evdok.BLL.Controllers
 
         public List<ReportModel> readReportsFromExcelToModel()
         {
-
             var reports = new ExcelMapper("D:\\Evdokimi\\Report.xlsx") { HeaderRow = false}.Fetch<ReportModel>().ToList();
-
             return reports;
         }
     }

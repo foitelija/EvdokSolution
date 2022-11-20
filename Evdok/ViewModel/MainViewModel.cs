@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Evdok.ViewModel
 {
@@ -13,7 +14,9 @@ namespace Evdok.ViewModel
     {
         private string CorpoSegment = string.Empty;
         private string MiddleSegment = string.Empty;
-        private string ClientSegment = string.Empty;
+        private string MassSegment = string.Empty;
+        private string FinancialSegment = string.Empty;
+        private string UnknownSegment = string.Empty;
 
         private readonly IWorkerController _workerService;
 
@@ -45,6 +48,7 @@ namespace Evdok.ViewModel
             }
         }
 
+        #region RelayCommands for segments
         private RelayCommand checkMediumCommand;
         public RelayCommand CheckMediumCommand
         {
@@ -52,24 +56,142 @@ namespace Evdok.ViewModel
             {
                 return checkMediumCommand ?? new RelayCommand(obj =>
                 {
-                    checkedMediumBissunes(obj);
+                    checkedMediumBusiness(obj);
                 });
             }
         }
 
-        private void checkedMediumBissunes(object obj)
+        private RelayCommand checkCorpoCommand;
+        public RelayCommand CheckCorpoCommand
         {
-            var checkbox = obj as System.Windows.Controls.CheckBox;
+            get
+            {
+                return checkCorpoCommand ?? new RelayCommand(obj =>
+                {
+                    checkCorporateBusiness(obj);
+                });
+            }
+        }
+
+        private RelayCommand checkMassCommand;
+        public RelayCommand CheckMassCommand
+        {
+            get
+            {
+                return checkMassCommand ?? new RelayCommand(obj =>
+                {
+                    checkMassBusiness(obj);
+                });
+            }
+        }
+
+        private RelayCommand checkFinancialCommand;
+        public RelayCommand CheckFinancialCommand
+        {
+            get
+            {
+                return checkFinancialCommand ?? new RelayCommand(obj =>
+                {
+                    checkFinancialBusiness(obj);
+                });
+            }
+        }
+
+        private RelayCommand checkUnknownCommand;
+        public RelayCommand CheckUnknownCommand
+        {
+            get
+            {
+                return checkUnknownCommand ?? new RelayCommand(obj =>
+                {
+                    checkUnknowsBusiness(obj);
+                });
+            }
+        }
+
+        #endregion
+
+
+
+        #region Private void for segments
+
+        //средний сегмент бизнеса
+        private void checkedMediumBusiness(object obj)
+        {
+            var checkbox = obj as CheckBox;
             if (checkbox.IsChecked.Value)
             {
                 MiddleSegment = "middle";
-                MessageBox.Show(MiddleSegment);
+                MessageBox.Show(MiddleSegment + $"\n{nameof(checkedMediumBusiness)}");
             }
             else
             {
                 MiddleSegment = "False";
-                MessageBox.Show(MiddleSegment);
+                MessageBox.Show(MiddleSegment + $"\n{nameof(checkedMediumBusiness)}");
             }
         }
+
+        //корпоративный сегмент
+        private void checkCorporateBusiness(object obj)
+        {
+            var checkboxCorpo = obj as CheckBox;
+            if (checkboxCorpo.IsChecked.Value)
+            {
+                CorpoSegment = "Corporate";
+                MessageBox.Show(CorpoSegment + $"\n{nameof(checkCorporateBusiness)}");
+            }
+            else
+            {
+                CorpoSegment = "False";
+                MessageBox.Show(CorpoSegment + $"\n{nameof(checkCorporateBusiness)}");
+            }
+        }
+
+        private void checkMassBusiness(object obj)
+        {
+            var checkboxMass = obj as CheckBox;
+            if (checkboxMass.IsChecked.Value)
+            {
+                MassSegment = "Mass";
+                MessageBox.Show(MassSegment + $"\n{nameof(checkMassBusiness)}");
+            }
+            else
+            {
+                MassSegment = "False";
+                MessageBox.Show(MassSegment + $"\n{nameof(checkMassBusiness)}");
+            }
+        }
+
+        private void checkFinancialBusiness(object obj)
+        {
+            var checkboxFinancial = obj as CheckBox;
+            if (checkboxFinancial.IsChecked.Value)
+            {
+                FinancialSegment = "Finance";
+                MessageBox.Show(FinancialSegment + $"\n{nameof(checkFinancialBusiness)}");
+            }
+            else
+            {
+                FinancialSegment = "False";
+                MessageBox.Show(FinancialSegment + $"\n{nameof(checkFinancialBusiness)}");
+            }
+        }
+
+        private void checkUnknowsBusiness(object obj)
+        {
+            var checkboxUnk = obj as CheckBox;
+            if (checkboxUnk.IsChecked.Value)
+            {
+                UnknownSegment = "Unknown";
+                MessageBox.Show(UnknownSegment + $"\n{nameof(checkUnknowsBusiness)}");
+            }
+            else
+            {
+                UnknownSegment = "False";
+                MessageBox.Show(UnknownSegment + $"\n{nameof(checkUnknowsBusiness)}");
+            }
+        }
+
+        #endregion
     }
 }

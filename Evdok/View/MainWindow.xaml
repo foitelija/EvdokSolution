@@ -6,10 +6,23 @@
         xmlns:local="clr-namespace:Evdok"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-         ResizeMode="NoResize" Background="#181735">
+        ResizeMode="NoResize" Background="#181735">
     <Grid>
-        <Button Command="{Binding StartCommand}" Content="Button" HorizontalAlignment="Left" Margin="544,329,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
+        <Button Command="{Binding StartCommand}" Content="Старт" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
         <Button Command="{Binding ShutdownWindowCommand}" Content="Exit" HorizontalAlignment="Left" Margin="754,10,0,0" VerticalAlignment="Top"/>
-        <CheckBox Command="{Binding CheckMediumCommand}" CommandParameter="{Binding ElementName=checkMedium}" Name="checkMedium" Content="Средний бизнес" HorizontalAlignment="Left" Margin="440,162,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox Command="{Binding CheckMediumCommand}" CommandParameter="{Binding ElementName=checkMedium}" Name="checkMedium" Content="Средний бизнес" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox Command="{Binding CheckCorpoCommand}" CommandParameter="{Binding ElementName=checkCorpo}" Name="checkCorpo" Content="Корпо бизнес" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox Command="{Binding CheckMassCommand}" CommandParameter="{Binding ElementName=checkMass}" Content="Массовый" Name="checkMass" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.578" Foreground="White"/>
+        <CheckBox Command="{Binding CheckFinancialCommand}" CommandParameter="{Binding ElementName=checkFinance}" Name="checkFinance" Content="Финансовые иснтитуты" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox Command="{Binding CheckUnknownCommand}" CommandParameter="{Binding ElementName=checkUnknown}" Name="checkUnknown" Content="Неопределен" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Margin="216,19,0,0" TextWrapping="Wrap" Text="Стартовый отчёт" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="357,19,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="Авдотий" HorizontalAlignment="Left" Margin="457,290,0,0" VerticalAlignment="Top" Height="38" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Margin="216,58,0,0" TextWrapping="Wrap" Text="Путь для авдота" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Выбрать" HorizontalAlignment="Left" Margin="357,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.083,0.042" Width="66"/>
+        <TextBox HorizontalAlignment="Left" Margin="216,98,0,0" TextWrapping="Wrap" Text="Почта для письма" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="357,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.139,0.505" Width="66"/>
+        <TextBox HorizontalAlignment="Left" Margin="216,137,0,0" TextWrapping="Wrap" Text="Номера и мыло" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="357,136,0,0" VerticalAlignment="Top" Width="66"/>
     </Grid>
 </Window>
