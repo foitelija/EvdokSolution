@@ -31,6 +31,7 @@ namespace Evdok.BLL.Controllers
 
             string[] xokSegmentMass = new string[] {Medium, Corporate, Mass, Financial, Unknown };
 
+            var numbersResponse = _excelController.readNumbersFromExcelToModel();
 
             var reportResponse = _excelController.readReportsFromExcelToModel();
 

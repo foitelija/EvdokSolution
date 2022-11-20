@@ -10,6 +10,7 @@ namespace Evdok.BLL.Interfaces
     public interface IExcelController
     {
         List<ReportModel> readReportsFromExcelToModel();
+        List<NumbersModel> readNumbersFromExcelToModel();
         List<ReportModel> createReportModelEditedWithoutSameClients(List<ReportModel> reportModels, List<RkoModel> rkoModels);
     }
 }

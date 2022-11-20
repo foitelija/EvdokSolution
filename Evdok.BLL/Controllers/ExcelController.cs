@@ -21,6 +21,12 @@ namespace Evdok.BLL.Controllers
             throw new NotImplementedException();
         }
 
+        public List<NumbersModel> readNumbersFromExcelToModel()
+        {
+            var response = new ExcelMapper(DialogFileController.GetPhonePath()) { HeaderRow = true }.Fetch<NumbersModel>().ToList();
+            return response;
+        }
+
         public List<ReportModel> readReportsFromExcelToModel()
         {
             var reports = new ExcelMapper(DialogFileController.GetReportPath()) { HeaderRow = false}.Fetch<ReportModel>().ToList();
