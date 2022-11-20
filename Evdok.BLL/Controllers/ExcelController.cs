@@ -15,10 +15,6 @@ namespace Evdok.BLL.Controllers
     {
         public List<ReportModel> reportModels;
 
-        public ExcelController()
-        {
-
-        }
 
         public List<ReportModel> createReportModelEditedWithoutSameClients(List<ReportModel> reportModels, List<RkoModel> rkoModels)
         {

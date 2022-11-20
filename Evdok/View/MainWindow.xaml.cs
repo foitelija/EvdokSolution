@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Autofac;
+using Autofac.Core;
+using Evdok.BLL.Interfaces;
 
 namespace Evdok
 {
@@ -22,10 +25,16 @@ namespace Evdok
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IContainer _container;
         public MainWindow()
         {
+            _container = Core.Container.config();
             InitializeComponent();
-            DataContext = new MainViewModel(new WorkerController());
+            var _excelController = _container.Resolve<IExcelController>();
+            var _xokController = _container.Resolve<IXokController>();
+            var _rkoController = _container.Resolve<IRkoController>();
+
+            DataContext = new MainViewModel(new WorkerController(_excelController, _xokController, _rkoController));
         }
     }
 }

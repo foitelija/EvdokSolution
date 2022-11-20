@@ -1,6 +1,7 @@
 ﻿using Evdok.BLL.Interfaces;
 using Evdok.DLL.Models;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,17 @@ namespace Evdok.BLL.Controllers
 {
     public class WorkerController : IWorkerController
     {
-        ExcelController _excelController = new ExcelController();
-        SqlController _sqlController = new SqlController();
+
+        private readonly IExcelController _excelController;
+        private readonly IXokController _xokController;
+        private readonly IRkoController _rkoController;
+
+        public WorkerController(IExcelController excelController, IXokController xokController, IRkoController rkoController)
+        {
+            _excelController = excelController;
+            _xokController = xokController;
+            _rkoController = rkoController;
+        }
 
         string middleSegment = string.Empty;
         string corporateSegment = string.Empty;
@@ -31,7 +41,10 @@ namespace Evdok.BLL.Controllers
             unknownSegment = Unknown;
 
             var reportResponse = _excelController.readReportsFromExcelToModel();
-            var sqlQueryList = _sqlController.getValuesFromXokSqlDatabase("234006");
+
+            //var xokResponse = _xokController.XokModels(reportResponse);
+
+
 
 
             _reportModels = reportResponse;
