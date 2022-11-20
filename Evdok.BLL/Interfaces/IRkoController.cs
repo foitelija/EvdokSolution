@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Evdok.BLL.Interfaces
 {
-    public interface IWorkerController
+    public interface IRkoController
     {
-        Task EvdokimStartWork(string Medium, string Corporate, string Mass, string Financial, string Unknown);
     }
 }

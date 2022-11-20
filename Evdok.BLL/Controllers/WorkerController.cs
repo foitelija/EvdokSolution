@@ -14,15 +14,26 @@ namespace Evdok.BLL.Controllers
         ExcelController _excelController = new ExcelController();
         SqlController _sqlController = new SqlController();
 
-        string middleBussiness = string.Empty;
+        string middleSegment = string.Empty;
+        string corporateSegment = string.Empty;
+        string massSegment = string.Empty;
+        string financialSegment = string.Empty;
+        string unknownSegment = string.Empty;
 
         public List<ReportModel> _reportModels;
 
-        public async Task EvdokimStartWork(string Medium)
+        public async Task EvdokimStartWork(string Medium, string Corporate, string Mass, string Financial, string Unknown)
         {
-            middleBussiness = Medium;
+            middleSegment = Medium;
+            corporateSegment = Corporate;
+            massSegment = Mass;
+            financialSegment = Financial;
+            unknownSegment = Unknown;
+
+            var reportResponse = _excelController.readReportsFromExcelToModel();
             var sqlQueryList = _sqlController.getValuesFromXokSqlDatabase("234006");
-            var reportResponse =  _excelController.readReportsFromExcelToModel();
+
+
             _reportModels = reportResponse;
         }
     }

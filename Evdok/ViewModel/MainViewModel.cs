@@ -32,7 +32,7 @@ namespace Evdok.ViewModel
             {
                 return startCommand ?? new RelayCommand(obj =>
                 {
-                    _workerService.EvdokimStartWork(MiddleSegment);
+                    _workerService.EvdokimStartWork(MiddleSegment, CorpoSegment, MassSegment, FinancialSegment, UnknownSegment);
                 });
             }
         }

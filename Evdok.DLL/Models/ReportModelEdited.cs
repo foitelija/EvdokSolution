@@ -2,7 +2,7 @@
 
 namespace Evdok.DLL.Models
 {
-    public class ReportModel
+    public class ReportModelEdited
     {
         [Column(1)]
         public int Code1 { get; set; }
