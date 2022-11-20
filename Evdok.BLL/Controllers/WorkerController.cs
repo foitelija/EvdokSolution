@@ -24,25 +24,17 @@ namespace Evdok.BLL.Controllers
             _rkoController = rkoController;
         }
 
-        string middleSegment = string.Empty;
-        string corporateSegment = string.Empty;
-        string massSegment = string.Empty;
-        string financialSegment = string.Empty;
-        string unknownSegment = string.Empty;
-
         public List<ReportModel> _reportModels;
 
         public async Task EvdokimStartWork(string Medium, string Corporate, string Mass, string Financial, string Unknown)
         {
-            middleSegment = Medium;
-            corporateSegment = Corporate;
-            massSegment = Mass;
-            financialSegment = Financial;
-            unknownSegment = Unknown;
+
+            string[] xokSegmentMass = new string[] {Medium, Corporate, Mass, Financial, Unknown };
+
 
             var reportResponse = _excelController.readReportsFromExcelToModel();
 
-            //var xokResponse = _xokController.XokModels(reportResponse);
+            var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass);
 
 
 

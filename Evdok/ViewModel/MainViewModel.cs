@@ -19,11 +19,69 @@ namespace Evdok.ViewModel
         private string UnknownSegment = string.Empty;
 
         private readonly IWorkerController _workerService;
+        IDialogFileController _dialogFile;
 
-        public MainViewModel(IWorkerController workerService)
+        public MainViewModel(IDialogFileController dialogFile, IWorkerController workerService)
         {
             _workerService = workerService;
+            _dialogFile = dialogFile;
         }
+
+
+        public IDialogFileController DialogFileService
+        {
+            get { return _dialogFile; }
+            set
+            {
+                _dialogFile = value;
+            }
+        }
+
+        private RelayCommand openCsvCommand;
+        public RelayCommand OpenCsvCommand
+        {
+            get
+            {
+                return openCsvCommand ?? new RelayCommand(obj =>
+                {
+                    if(_dialogFile.OpenCsvFileDialog() == true)
+                    {
+                        _dialogFile.SetCsvPath(_dialogFile.CsvFilePath);
+                    }
+                });
+            }
+        }
+
+        private RelayCommand openPhoneCommand;
+        public RelayCommand OpenPhoneCommand
+        {
+            get
+            {
+                return openPhoneCommand ?? new RelayCommand(obj =>
+                {
+                    if(_dialogFile.OpenPhoneFileDialog()== true)
+                    {
+                        _dialogFile.SetPhonePath(_dialogFile.PhoneFilePath);
+                    }
+                });
+            }
+        }
+
+        private RelayCommand openReportCommand;
+        public RelayCommand OpenReportCommand
+        {
+            get
+            {
+                return openReportCommand ?? new RelayCommand(obj =>
+                {
+                    if(_dialogFile.OpenReportFileDialog() == true)
+                    {
+                        _dialogFile.SetReportPath(_dialogFile.ReportFilePath);
+                    }
+                });
+            }
+        }
+
 
         private RelayCommand startCommand;
         public RelayCommand StartCommand
@@ -121,13 +179,11 @@ namespace Evdok.ViewModel
             var checkbox = obj as CheckBox;
             if (checkbox.IsChecked.Value)
             {
-                MiddleSegment = "middle";
-                MessageBox.Show(MiddleSegment + $"\n{nameof(checkedMediumBusiness)}");
+                MiddleSegment = "Средний";
             }
             else
             {
                 MiddleSegment = "False";
-                MessageBox.Show(MiddleSegment + $"\n{nameof(checkedMediumBusiness)}");
             }
         }
 
@@ -137,13 +193,11 @@ namespace Evdok.ViewModel
             var checkboxCorpo = obj as CheckBox;
             if (checkboxCorpo.IsChecked.Value)
             {
-                CorpoSegment = "Corporate";
-                MessageBox.Show(CorpoSegment + $"\n{nameof(checkCorporateBusiness)}");
+                CorpoSegment = "Корпоративный";
             }
             else
             {
                 CorpoSegment = "False";
-                MessageBox.Show(CorpoSegment + $"\n{nameof(checkCorporateBusiness)}");
             }
         }
 
@@ -152,13 +206,11 @@ namespace Evdok.ViewModel
             var checkboxMass = obj as CheckBox;
             if (checkboxMass.IsChecked.Value)
             {
-                MassSegment = "Mass";
-                MessageBox.Show(MassSegment + $"\n{nameof(checkMassBusiness)}");
+                MassSegment = "Массовый";
             }
             else
             {
                 MassSegment = "False";
-                MessageBox.Show(MassSegment + $"\n{nameof(checkMassBusiness)}");
             }
         }
 
@@ -167,13 +219,11 @@ namespace Evdok.ViewModel
             var checkboxFinancial = obj as CheckBox;
             if (checkboxFinancial.IsChecked.Value)
             {
-                FinancialSegment = "Finance";
-                MessageBox.Show(FinancialSegment + $"\n{nameof(checkFinancialBusiness)}");
+                FinancialSegment = "Финансовый";
             }
             else
             {
                 FinancialSegment = "False";
-                MessageBox.Show(FinancialSegment + $"\n{nameof(checkFinancialBusiness)}");
             }
         }
 
@@ -182,13 +232,11 @@ namespace Evdok.ViewModel
             var checkboxUnk = obj as CheckBox;
             if (checkboxUnk.IsChecked.Value)
             {
-                UnknownSegment = "Unknown";
-                MessageBox.Show(UnknownSegment + $"\n{nameof(checkUnknowsBusiness)}");
+                UnknownSegment = "Неопределен";
             }
             else
             {
                 UnknownSegment = "False";
-                MessageBox.Show(UnknownSegment + $"\n{nameof(checkUnknowsBusiness)}");
             }
         }
 

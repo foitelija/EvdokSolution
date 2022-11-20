@@ -12,7 +12,7 @@ namespace Evdok.DLL.Models
         public string Id_client { get; set; }
         public string App_Number { get; set; } = "empty";
         public string Summa { get; set; } = "empty";
-        public string Annotatio { get; set; }
+        public string Annotation { get; set; }
         public string Email { get; set; }
         public string Executor { get; set; }
     }

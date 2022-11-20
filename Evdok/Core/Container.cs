@@ -16,6 +16,7 @@ namespace Evdok.Core
             builder.RegisterType<XokController>().As<IXokController>();
             builder.RegisterType<RkoController>().As<IRkoController>();
             builder.RegisterType<MailController>().As<IMailController>();
+            builder.RegisterType<DialogFileController>().As<IDialogFileController>();
 
             return builder.Build();
         }

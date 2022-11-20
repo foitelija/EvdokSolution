@@ -98,7 +98,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConstFiles\FilePaths.cs" />
+    <Compile Include="Models\Config.cs" />
     <Compile Include="Models\ReportModel.cs" />
     <Compile Include="Models\ReportModelEdited.cs" />
     <Compile Include="Models\RkoModel.cs" />

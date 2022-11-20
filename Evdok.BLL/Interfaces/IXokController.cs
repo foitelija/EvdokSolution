@@ -9,6 +9,6 @@ namespace Evdok.BLL.Interfaces
 {
     public interface IXokController
     {
-        List<XokModel> XokModels(List<ReportModel> reportModelEditeds);
+        List<XokModel> XokModels(List<ReportModel> reportModelEditeds, string[] segments);
     }
 }
