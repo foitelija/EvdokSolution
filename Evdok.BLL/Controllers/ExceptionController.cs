@@ -19,9 +19,9 @@ namespace Evdok.BLL.Controllers
 
 
 
-            for (int i = 0; i < xoks.Count; i++)
+            for (int i = 0; i < gomelbotXok.Count; i++)
             {
-                string firstEqId = xoks[0].Id_client;
+                string firstEqId = gomelbotXok[0].Id_client;
 
 
                 //if (xok[0].Dosk.ToLower().Contains("gomelbot") || xok[0].Email.ToLower().Contains("gomelbot"))
@@ -34,6 +34,10 @@ namespace Evdok.BLL.Controllers
                 //    i = 0;
                 //    continue;
                 //}
+
+                gomelbotXok.RemoveAll(x =>x.Id_client == firstEqId);
+                i = 0;
+
             }
 
 

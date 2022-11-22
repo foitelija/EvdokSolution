@@ -33,13 +33,13 @@ namespace Evdok.BLL.Controllers
 
             string[] xokSegmentMass = new string[] {Medium, Corporate, Mass, Financial, Unknown };
 
-            var numbersResponse = _excelController.readNumbersFromExcelToModel();
+            var numbersResponse = _excelController.readNumbersFromExcelToModel(); // читаем файл Номера2.0
 
-            var reportResponse = _excelController.readReportsFromExcelToModel();
+            var reportResponse = _excelController.readReportsFromExcelToModel(); //Читай файл отчёта
 
-            var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass);
+            var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass); // создаём список задач на постановку в Xok, но не отправляем их на почту.
 
-            var excResponse = _exceptionController.CreateLettersWithExceptions(xokResponse, numbersResponse);
+            var excResponse = _exceptionController.CreateLettersWithExceptions(xokResponse, numbersResponse); 
 
 
 
