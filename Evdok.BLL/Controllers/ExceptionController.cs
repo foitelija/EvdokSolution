@@ -12,7 +12,10 @@ namespace Evdok.BLL.Controllers
     {
         List<ExceptionModel> IExceptionController.CreateLettersWithExceptions(List<XokModel> xoks, List<NumbersModel> numbers)
         {
-            var gomelbotXok = xoks.Where(d => d.Dosk.ToLower() == "gomelbot").ToList();
+            var gomelbotXok = xoks.Where(d =>
+            {
+                return d.Email.ToLower().Contains("gomelbot") || d.Dosk.ToLower().Contains("gomelbot");
+            }).ToList();
 
 
 
