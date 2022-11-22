@@ -95,8 +95,8 @@ namespace Evdok.BLL.Controllers
                 i = 0;
             }
 
-            string xokListName = $"xokTask_{DateTime.Now.ToString("yyyy.MM.dd")}_{DateTime.Now.ToString("HH.mm.ss")}.xlsx";
-            new ExcelMapper().Save($"D:\\dotnetprojects\\EvdokSolution\\Evdok\\bin\\Debug\\Done\\{xokListName}", xokModel, "list1");
+            //string xokListName = $"xokTask_{DateTime.Now.ToString("yyyy.MM.dd")}_{DateTime.Now.ToString("HH.mm.ss")}.xlsx";
+            //new ExcelMapper().Save($"D:\\dotnetprojects\\EvdokSolution\\Evdok\\bin\\Debug\\Done\\{xokListName}", xokModel, "list1");
 
 
             return xokModel;

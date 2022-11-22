@@ -33,8 +33,9 @@ namespace Evdok
             var _excelController = _container.Resolve<IExcelController>();
             var _xokController = _container.Resolve<IXokController>();
             var _rkoController = _container.Resolve<IRkoController>();
+            var _excController = _container.Resolve<IExceptionController>();
 
-            DataContext = new MainViewModel(new DialogFileController(), new WorkerController(_excelController, _xokController, _rkoController));
+            DataContext = new MainViewModel(new DialogFileController(), new WorkerController(_excelController, _xokController, _rkoController, _excController));
         }
     }
 }

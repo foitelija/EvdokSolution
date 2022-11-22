@@ -16,12 +16,14 @@ namespace Evdok.BLL.Controllers
         private readonly IExcelController _excelController;
         private readonly IXokController _xokController;
         private readonly IRkoController _rkoController;
+        private readonly IExceptionController _exceptionController;
 
-        public WorkerController(IExcelController excelController, IXokController xokController, IRkoController rkoController)
+        public WorkerController(IExcelController excelController, IXokController xokController, IRkoController rkoController, IExceptionController exceptionController)
         {
             _excelController = excelController;
             _xokController = xokController;
             _rkoController = rkoController;
+            _exceptionController = exceptionController;
         }
 
         public List<ReportModel> _reportModels;
@@ -36,6 +38,8 @@ namespace Evdok.BLL.Controllers
             var reportResponse = _excelController.readReportsFromExcelToModel();
 
             var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass);
+
+            var excResponse = _exceptionController.CreateLettersWithExceptions(xokResponse, numbersResponse);
 
 
 

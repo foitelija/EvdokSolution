@@ -209,6 +209,7 @@
   <ItemGroup>
     <Compile Include="Controllers\DialogFileController.cs" />
     <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\ExceptionController.cs" />
     <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\RkoController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Controllers\XokController.cs" />
     <Compile Include="Interfaces\IDialogFileController.cs" />
     <Compile Include="Interfaces\IExcelController.cs" />
+    <Compile Include="Interfaces\IExceptionController.cs" />
     <Compile Include="Interfaces\IMailController.cs" />
     <Compile Include="Interfaces\IRkoController.cs" />
     <Compile Include="Interfaces\ISqlController.cs" />
