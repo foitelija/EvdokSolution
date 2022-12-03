@@ -18,6 +18,8 @@ namespace Evdok.ViewModel
         private string FinancialSegment = string.Empty;
         private string UnknownSegment = string.Empty;
 
+        public RelayCommand MoveWindowCommand { get; set; }
+
         private readonly IWorkerController _workerService;
         IDialogFileController _dialogFile;
 
@@ -25,6 +27,7 @@ namespace Evdok.ViewModel
         {
             _workerService = workerService;
             _dialogFile = dialogFile;
+            MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });
         }
 
 

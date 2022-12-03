@@ -6,9 +6,68 @@
         xmlns:local="clr-namespace:Evdok"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize" Background="#181735">
-    <Grid>
-        <Button Command="{Binding StartCommand}" Content="Старт" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent"
+        AllowsTransparency="True">
+    <DockPanel Background="#1E1E1E" Margin="7">
+        <Border Height="28" 
+                Background="#252525" 
+                DockPanel.Dock="Top" >
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding MoveWindowCommand}"/>
+            </Border.InputBindings>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="RPA - Evdokim" 
+                           Foreground="LightGray"
+                           FontFamily="Consolas"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="100,0,0,0"
+                           FontSize="22"
+                           />
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,0,4,0">
+                    <Button Content="-"/>
+                    <Button Command="{Binding ShutdownWindowCommand}" Content="X"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Width="100"
+                HorizontalAlignment="Left"
+                Background="#252525">
+
+
+            <StackPanel>
+                <RadioButton Content="Настройки"
+                             FontSize="16"
+                             FontWeight="Normal"
+                             Foreground="LightGray"
+                             IsChecked="True"/>
+                
+                <RadioButton Content="Старт"
+                             FontSize="16"
+                             FontWeight="Normal"
+                             Foreground="LightGray"/>
+                
+                <RadioButton Content="Авдотий"
+                             FontSize="16"
+                             FontWeight="Normal"
+                             Foreground="LightGray"/>
+            </StackPanel>
+
+        </Border>
+
+        <ContentPresenter/>
+
+        <!--<Button Command="{Binding StartCommand}" Content="Старт" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
         <Button Command="{Binding ShutdownWindowCommand}" Content="Exit" HorizontalAlignment="Left" Margin="754,10,0,0" VerticalAlignment="Top"/>
         <CheckBox Command="{Binding CheckMediumCommand}" CommandParameter="{Binding ElementName=checkMedium}" Name="checkMedium" Content="Средний бизнес" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Foreground="White"/>
         <CheckBox Command="{Binding CheckCorpoCommand}" CommandParameter="{Binding ElementName=checkCorpo}" Name="checkCorpo" Content="Корпо бизнес" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Foreground="White"/>
@@ -30,7 +89,7 @@
         
         <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=ReportFilePath}" HorizontalAlignment="Left" Margin="445,16,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=PhoneFilePath}" HorizontalAlignment="Left" Margin="450,133,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=CsvFilePath}" HorizontalAlignment="Left" Margin="445,56,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=CsvFilePath}" HorizontalAlignment="Left" Margin="445,56,0,0" VerticalAlignment="Top" Foreground="White"/>-->
 
-    </Grid>
+    </DockPanel>
 </Window>
