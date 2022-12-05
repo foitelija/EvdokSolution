@@ -28,5 +28,13 @@ namespace Evdok.BLL.Interfaces
         string MailAddress { get; set; }
 
 
+        string CorpoInfoCsv { get; set; }
+        bool OpenCorpoInfoCsv();
+        void SetCorpoInfoCsv(string filePath);
+
+        string CorpoInfoMidCsv { get; set; }
+        bool OpenCorpoInfoMidCsv();
+        void SetCorpoInfoMidCsv(string filePath);
+
     }
 }

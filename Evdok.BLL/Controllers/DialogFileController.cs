@@ -15,6 +15,29 @@ namespace Evdok.BLL.Controllers
 {
     public class DialogFileController : IDialogFileController, INotifyPropertyChanged
     {
+        private string corpoInfoCsv = GetInfoCorpoPath();
+        public string CorpoInfoCsv
+        {
+            get { return corpoInfoCsv; }
+            set
+            {
+                corpoInfoCsv = value;
+                OnPropertyChanged("CorpoInfoCsv");
+            }
+        }
+
+        public bool OpenCorpoInfoCsv()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog() == true)
+            {
+                CorpoInfoCsv = openFileDialog.FileName;
+                return true;
+            }
+            return false;
+        }
+
+
         #region REPORT FILE
         private string reportFilePath = GetReportPath();
         public string ReportFilePath
@@ -104,6 +127,14 @@ namespace Evdok.BLL.Controllers
             }
         }
 
+        public void SetCorpoInfoCsv(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(Config.corpoInfoPath, false, Encoding.Default))
+            {
+                writer.WriteLine(filePath);
+            }
+        }
+
         public void SetReportPath(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(Config.reportFilePath, false, Encoding.Default))
@@ -139,8 +170,41 @@ namespace Evdok.BLL.Controllers
             set
             {
                 mailAddress = value;
-                OnPropertyChanged("CsvFilePath");
+                OnPropertyChanged("MailAddress");
             }
+        }
+
+        private string corpoInfoMidCsv = GetInfoCorpoMidPath();
+        public string CorpoInfoMidCsv
+        {
+            get
+            {
+                return corpoInfoMidCsv;
+            }
+            set
+            {
+                corpoInfoMidCsv = value;
+                OnPropertyChanged("CorpoInfoMidCsv");
+            }
+        }
+
+        public static string GetInfoCorpoPath()
+        {
+            string filePath = Config.corpoInfoPath;
+            string line;
+            string path = string.Empty;
+
+            if (File.Exists(filePath))
+            {
+                using (StreamReader sr = new StreamReader(filePath, Encoding.Default))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        path = line;
+                    }
+                }
+            }
+            return path;
         }
 
         #region ON PROPERTY CHANGED
@@ -168,7 +232,7 @@ namespace Evdok.BLL.Controllers
                 }
             }
             return content;
-        }
+        }        
 
         public static string GetReportPath()
         {
@@ -226,6 +290,44 @@ namespace Evdok.BLL.Controllers
                 }
             }
             return path;
+        }
+
+        public static string GetInfoCorpoMidPath()
+        {
+            string filePath = Config.corpoMidPath;
+            string line;
+            string path = string.Empty;
+
+            if (File.Exists(filePath))
+            {
+                using (StreamReader sr = new StreamReader(filePath, Encoding.Default))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        path = line;
+                    }
+                }
+            }
+            return path;
+        }
+
+        public bool OpenCorpoInfoMidCsv()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                CorpoInfoMidCsv = openFileDialog.FileName;
+                return true;
+            }
+            return false;
+        }
+
+        public void SetCorpoInfoMidCsv(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(Config.corpoMidPath, false, Encoding.Default))
+            {
+                writer.WriteLine(filePath);
+            }
         }
 
         #endregion

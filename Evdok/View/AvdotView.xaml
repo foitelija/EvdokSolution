@@ -8,6 +8,46 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1E1E1E">
     <Grid>
-        <Label Content="AVDOT PAGE" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel VerticalAlignment="Center" Margin="15">
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Путь к файлу CoproInfo"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="200"/>
+                <TextBox Margin="10,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource corpoInfo}"/>
+                <Button Width="250"
+                Height="35"
+                Content="Выбрать"
+                BorderThickness="3"
+                        Command="{Binding OpenCoproInfoCommand}"
+                Style="{StaticResource AvdotButtons}" Cursor="Hand"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Путь к файлу CorpoMid"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="200"/>
+                <TextBox Margin="10,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource corpoMidInfo}"/>
+                <Button Width="250"
+                Height="35"
+                Content="Выбрать"
+                BorderThickness="3"
+                        Command="{Binding OpenCoproMidCommand}"
+                Style="{StaticResource AvdotButtons}" Cursor="Hand"/>
+            </StackPanel>
+            
+        </StackPanel>
     </Grid>
 </UserControl>

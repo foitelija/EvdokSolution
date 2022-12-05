@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Themes/MenuButton.Nord.Xaml"/>
                 <ResourceDictionary Source="/Themes/SettingsButtons.Nord.Xaml"/>
                 <ResourceDictionary Source="/Themes/StartButtons.Nord.Xaml"/>
+                <ResourceDictionary Source="/Themes/AvdotButtons.Xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type vms:StartViewModel}">

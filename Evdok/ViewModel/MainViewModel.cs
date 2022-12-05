@@ -43,7 +43,7 @@ namespace Evdok.ViewModel
             
             StartViewModel = new StartViewModel(workerService);
             SettingVM = new SettingsViewModel(dialogFile);
-            AvdotVM = new AvdotViewModel();
+            AvdotVM = new AvdotViewModel(dialogFile);
             CurrentView = SettingVM;
 
             MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });

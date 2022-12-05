@@ -3,6 +3,7 @@ using Evdok.DLL.Models;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -31,21 +32,33 @@ namespace Evdok.BLL.Controllers
 
         public async Task EvdokimStartWork(string Medium, string Corporate, string Mass, string Financial, string Unknown)
         {
+            try
+            {
+                string csvPath = File.ReadAllText(Config.csvFilePath).Replace("\r\n","");
 
-            string[] xokSegmentMass = new string[] {Medium, Corporate, Mass, Financial, Unknown };
+                string text = "dawdawdawdaw";
+                File.WriteAllText(Path.Combine(csvPath + "\\", "file.csv"), text);
 
-            var numbersResponse = _excelController.readNumbersFromExcelToModel(); // читаем файл Номера2.0
+                string[] xokSegmentMass = new string[] { Medium, Corporate, Mass, Financial, Unknown };
 
-            var reportResponse = _excelController.readReportsFromExcelToModel(); //Читай файл отчёта
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass); // создаём список задач на постановку в Xok, но не отправляем их на почту.
+            //var numbersResponse = _excelController.readNumbersFromExcelToModel(); // читаем файл Номера2.0
 
-            var excResponse = _exceptionController.CreateLettersWithExceptions(xokResponse, numbersResponse); 
+            //var reportResponse = _excelController.readReportsFromExcelToModel(); //Читай файл отчёта
+
+            //var xokResponse = _xokController.XokModels(reportResponse, xokSegmentMass); // создаём список задач на постановку в Xok, но не отправляем их на почту.
+
+            //var excResponse = _exceptionController.CreateLettersWithExceptions(xokResponse, numbersResponse);
 
 
 
 
-            _reportModels = reportResponse;
+            //_reportModels = reportResponse;
         }
     }
 }

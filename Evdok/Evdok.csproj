@@ -81,7 +81,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\AvdotViewModel.cs" />
-    <Compile Include="ViewModel\GlobalViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\StartViewModel.cs" />
     <Compile Include="View\AvdotView.xaml.cs">
@@ -93,6 +92,10 @@
     <Compile Include="View\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Themes\AvdotButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\MenuButton.Nord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
