@@ -3,6 +3,7 @@ using Evdok.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -60,6 +61,28 @@ namespace Evdok.ViewModel
                     {
                         _dialogFile.SetPhonePath(_dialogFile.PhoneFilePath);
                     }
+                });
+            }
+        }
+
+        private string mailsForMessage;
+        public string MailsForMessage
+        {
+            get { return mailsForMessage = _dialogFile.MailAddress; }
+            set
+            {
+                mailsForMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public RelayCommand MailCommand
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    _dialogFile.SetMail(mailsForMessage);
                 });
             }
         }

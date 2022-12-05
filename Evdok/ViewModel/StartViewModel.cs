@@ -18,7 +18,7 @@ namespace Evdok.ViewModel
         private string MassSegment = string.Empty;
         private string FinancialSegment = string.Empty;
         private string UnknownSegment = string.Empty;
-
+        
         public StartViewModel(IWorkerController workerController)
         {
             _workerController = workerController;

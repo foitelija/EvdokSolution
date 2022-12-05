@@ -83,7 +83,7 @@
                 Height="35"
                 Content="Сохранить"
                 BorderThickness="3"
-                    Command="{Binding OpenPhoneCommand}"
+                    Command="{Binding MailCommand}"
                 Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
             </StackPanel>
 

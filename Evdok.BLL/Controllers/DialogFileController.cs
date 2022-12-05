@@ -121,12 +121,53 @@ namespace Evdok.BLL.Controllers
         }
 
 
+        public void SetMail(string content)
+        {
+            using(StreamWriter writer = new StreamWriter(Config.mailFilePath, false, Encoding.Default))
+            {
+                writer.WriteLine(content);
+            }
+        }
+
+        private string mailAddress = GetEmail();
+        public string MailAddress
+        {
+            get
+            {
+                return mailAddress;
+            }
+            set
+            {
+                mailAddress = value;
+                OnPropertyChanged("CsvFilePath");
+            }
+        }
+
         #region ON PROPERTY CHANGED
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+
+        public static string GetEmail()
+        {
+            string filePath = Config.mailFilePath;
+            string line;
+            string content = string.Empty;
+
+            if (File.Exists(filePath))
+            {
+                using(StreamReader sr = new StreamReader(filePath, Encoding.Default))
+                {
+                    while((line = sr.ReadLine())!= null)
+                    {
+                        content = line;
+                    }
+                }
+            }
+            return content;
         }
 
         public static string GetReportPath()

@@ -102,7 +102,6 @@
     <Compile Include="Models\ExceptionModel.cs" />
     <Compile Include="Models\NumbersModel.cs" />
     <Compile Include="Models\ReportModel.cs" />
-    <Compile Include="Models\ReportModelEdited.cs" />
     <Compile Include="Models\RkoModel.cs" />
     <Compile Include="Models\XokModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

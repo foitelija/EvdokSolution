@@ -80,7 +80,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Core\Extensions.cs" />
     <Compile Include="ViewModel\AvdotViewModel.cs" />
     <Compile Include="ViewModel\GlobalViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />

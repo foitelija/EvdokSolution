@@ -13,5 +13,6 @@ namespace Evdok.DLL.Models
         public static string reportFilePath = Path.Combine(Environment.CurrentDirectory, @"file\path.txt");
         public static string phoneFilePath = Path.Combine(Environment.CurrentDirectory, @"file\path2.txt");
         public static string csvFilePath = Path.Combine(Environment.CurrentDirectory, @"file\path3.txt");
+        public static string mailFilePath = Path.Combine(Environment.CurrentDirectory, @"file\pathMail.txt");
     }
 }

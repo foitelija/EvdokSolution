@@ -134,7 +134,7 @@
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
                             <TextBox Margin="1"
-                                     Text="{Binding mailMessage}"
+                                     Text="{Binding MailsForMessage, UpdateSourceTrigger =PropertyChanged}"
                                      BorderThickness="0"
                                      Background="Transparent"
                                      VerticalAlignment="Center"
@@ -142,27 +142,6 @@
                                      Foreground="#CFCFCF"
                                      x:Name="filterValue"
                                      FontSize="11"/>
-
-                            <TextBlock IsHitTestVisible="False"
-                                       Text="Почта"
-                                       Margin="5,0,0,0"
-                                       FontSize="14"
-                                       Foreground="Black"
-                                       Grid.Column="1">
-
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text,ElementName=filterValue}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
-                                    </Style>
-
-                                </TextBlock.Style>
-                            </TextBlock>
-
                         </Grid>
 
 

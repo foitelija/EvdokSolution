@@ -22,7 +22,11 @@ namespace Evdok.BLL.Interfaces
         string CsvFilePath { get; set; }
         bool OpenCsvFileDialog();
         void SetCsvPath(string filePath);
-        
+
+
+        void SetMail(string content);
+        string MailAddress { get; set; }
+
 
     }
 }
