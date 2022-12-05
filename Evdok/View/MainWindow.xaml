@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Evdok"
+        xmlns:extensions="clr-namespace:Evdok.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
@@ -34,7 +35,7 @@
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="0,0,4,0">
-                    <Button Content="-"/>
+                    <Button Content="—"/>
                     <Button Command="{Binding ShutdownWindowCommand}" Content="X"/>
                 </StackPanel>
             </Grid>
@@ -50,12 +51,14 @@
                              FontSize="16"
                              FontWeight="Normal"
                              Foreground="LightGray"
-                             IsChecked="True"/>
+                             IsChecked="True"
+                             Command="{Binding ShowSettingView}" Cursor="Hand"/>
                 
                 <RadioButton Content="Старт"
                              FontSize="16"
                              FontWeight="Normal"
-                             Foreground="LightGray"/>
+                             Foreground="LightGray"
+                             Command="{Binding ShowStartView}"/>
                 
                 <RadioButton Content="Авдотий"
                              FontSize="16"
@@ -65,7 +68,7 @@
 
         </Border>
 
-        <ContentPresenter/>
+        <ContentPresenter Content="{Binding CurrentView}"/>
 
         <!--<Button Command="{Binding StartCommand}" Content="Старт" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Height="70" Width="221"/>
         <Button Command="{Binding ShutdownWindowCommand}" Content="Exit" HorizontalAlignment="Left" Margin="754,10,0,0" VerticalAlignment="Top"/>

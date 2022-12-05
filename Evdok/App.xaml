@@ -9,12 +9,19 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- Themes -->
+                <ResourceDictionary Source="/Themes/TitlebarButton.Nord.Xaml"/>
+                <ResourceDictionary Source="/Themes/MenuButton.Nord.Xaml"/>
+                <ResourceDictionary Source="/Themes/SettingsButtons.Nord.Xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type vms:StartViewModel}">
                 <view:StartView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type vms:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

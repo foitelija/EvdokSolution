@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Evdok.ViewModel
 {
-    public class StartViewModel
+    public class SettingsViewModel
     {
-        public StartViewModel()
+        public SettingsViewModel()
         {
 
         }

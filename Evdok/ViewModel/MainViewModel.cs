@@ -17,19 +17,39 @@ namespace Evdok.ViewModel
         private string MassSegment = string.Empty;
         private string FinancialSegment = string.Empty;
         private string UnknownSegment = string.Empty;
-
         public RelayCommand MoveWindowCommand { get; set; }
-
+        public RelayCommand ShowSettingView { get; set; }
+        public RelayCommand ShowStartView { get; set; }
         private readonly IWorkerController _workerService;
         IDialogFileController _dialogFile;
 
-        public MainViewModel(IDialogFileController dialogFile, IWorkerController workerService)
+
+        private object _currentView;
+        public object CurrentView
         {
-            _workerService = workerService;
-            _dialogFile = dialogFile;
-            MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });
+            get { return _currentView; }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
         }
 
+        public StartViewModel StartViewModel { get; set; }
+        public SettingsViewModel SettingVM { get; set; }
+
+        public MainViewModel(IDialogFileController dialogFile, IWorkerController workerService)
+        {
+            StartViewModel = new StartViewModel();
+            SettingVM = new SettingsViewModel();
+            CurrentView = SettingVM;
+            _workerService = workerService;
+            _dialogFile = dialogFile;
+
+            MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });
+            ShowSettingView = new RelayCommand(o => { CurrentView = SettingVM; });
+            ShowStartView = new RelayCommand(o => { CurrentView = StartViewModel; });
+        }
 
         public IDialogFileController DialogFileService
         {
