@@ -8,10 +8,46 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1E1E1E">
     <Grid>
-        <TextBlock Text="Start View"
-                   FontSize="28"
-                   VerticalAlignment="Center"
-                   Foreground="LightGray"
-                   HorizontalAlignment="Center"/>
+        <StackPanel VerticalAlignment="Center"
+                    Margin="15">
+            <CheckBox Content="Средний бизнес" HorizontalAlignment="Center" Foreground="White" Margin="5"
+                      Name="chekMedium"
+                      Command="{Binding CheckMediumCommand}"
+                      CommandParameter="{Binding ElementName=chekMedium}"/>
+            <CheckBox Content="Корпоративный бизнес" Foreground="White" HorizontalAlignment="Center" Margin="5"
+                      Name="checkCorpo"
+                      Command="{Binding CheckCorpoCommand}"
+                      CommandParameter="{Binding ElementName=checkCorpo}"/>
+            <CheckBox Content="Массовый бизнес" HorizontalAlignment="Center" Foreground="White" Margin="5"
+                      Name="checkMass"
+                      Command="{Binding CheckMassCommand}"
+                      CommandParameter="{Binding ElementName=checkMass}"/>
+            <CheckBox Content="Финансовые институты" HorizontalAlignment="Center" Foreground="White" Margin="5"
+                      Name="checkFinance"
+                      Command="{Binding CheckFinancialCommand}"
+                      CommandParameter="{Binding ElementName=checkFinance}"/>
+            <CheckBox Content="Неопределён" HorizontalAlignment="Center" Foreground="White" Margin="5"
+                      Name="checkUnknown"
+                      Command="{Binding CheckUnknownCommand}"
+                      CommandParameter="{Binding ElementName=checkUnknown}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Width="250"
+                    Height="35"
+                    Content="Старт"
+                    BorderThickness="3"
+                    Margin="5"
+                    Command="{Binding StartCommand}"
+                    Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+
+                <Button Width="250"
+                    Height="35"
+                    Content="ИСХ СЕРВИС"
+                    BorderThickness="3"
+                    Margin="5"
+                    Command="{Binding StartIsxCommand}"
+                    Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

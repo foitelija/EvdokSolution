@@ -40,7 +40,7 @@ namespace Evdok.ViewModel
 
         public MainViewModel(IDialogFileController dialogFile, IWorkerController workerService)
         {
-            StartViewModel = new StartViewModel();
+            StartViewModel = new StartViewModel(workerService);
             SettingVM = new SettingsViewModel(dialogFile);
             CurrentView = SettingVM;
             _workerService = workerService;
