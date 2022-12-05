@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Evdok.ViewModel
 {
-    public class StartViewModel
+    public class StartViewModel : ObservableObject
     {
         private readonly IWorkerController _workerController;
         private string CorpoSegment = string.Empty;
@@ -24,6 +24,18 @@ namespace Evdok.ViewModel
             _workerController = workerController;
         }
 
+        public RelayCommand StartCommand
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    _workerController.EvdokimStartWork(MiddleSegment,CorpoSegment,MassSegment,FinancialSegment,UnknownSegment);
+                });
+            }
+        }
+
+        #region СЕГМЕНТЫ
         #region СРЕДНИЙ БИЗНЕС
         public RelayCommand CheckMediumCommand
         {
@@ -166,6 +178,8 @@ namespace Evdok.ViewModel
 
             }
         }
+        #endregion
+
         #endregion
     }
 }
