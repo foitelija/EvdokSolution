@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Evdok"
         xmlns:extensions="clr-namespace:Evdok.Core"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="480" Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize" Background="Transparent"
         AllowsTransparency="True">
@@ -53,13 +53,13 @@
                              Foreground="LightGray"
                              IsChecked="True"
                              Command="{Binding ShowSettingView}" Cursor="Hand"/>
-                
+
                 <RadioButton Content="Старт"
                              FontSize="16"
                              FontWeight="Normal"
                              Foreground="LightGray"
                              Command="{Binding ShowStartView}"/>
-                
+
                 <RadioButton Content="Авдотий"
                              FontSize="16"
                              FontWeight="Normal"

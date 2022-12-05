@@ -22,8 +22,155 @@
                 <Setter Property="Background" Value="Gray"/>
             </Trigger>
         </Style.Triggers>
-        
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="ReportTextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="2"
+                            Padding="1"
+                            BorderThickness="2"
+                            BorderBrush="White"
+                            Background="#252525"
+                            Height="35"
+                            Width="250">
+                        <Grid>
+                            <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="1"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     Padding="3"
+                                     Foreground="#cfcfcf"
+                                     x:Name="uriReportFile"
+                                     FontSize="11"/>
+                            <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}"
+                                     Content="{Binding Path=ReportFilePath}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         
     </Style>
-    
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="CsvUrlPath">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="2"
+                            Padding="1"
+                            BorderThickness="2"
+                            BorderBrush="White"
+                            Background="#252525"
+                            Height="35"
+                            Width="250">
+                        <Grid>
+                            <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="1"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     Padding="3"
+                                     Foreground="#cfcfcf"
+                                     x:Name="uriCsvFile"
+                                     FontSize="11"/>
+                            <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}"
+                                     Content="{Binding Path=CsvFilePath}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="phonesUrlPath">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="2"
+                            Padding="1"
+                            BorderThickness="2"
+                            BorderBrush="White"
+                            Background="#252525"
+                            Height="35"
+                            Width="250">
+                        <Grid>
+                            <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="1"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     Padding="3"
+                                     Foreground="#cfcfcf"
+                                     x:Name="uriPhoneFile"
+                                     FontSize="11"/>
+                            <Label DataContext="{Binding Path=DialogFileService, UpdateSourceTrigger=PropertyChanged}"
+                                     Content="{Binding Path=PhoneFilePath}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="mailSendPath">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="2" 
+                            Padding="1" 
+                            BorderThickness="2"
+                            BorderBrush="White" 
+                            Background="#252525"
+                            Height="30"
+                            Width="250">
+
+                        <Grid>
+                            <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="1"
+                                     Text="{Binding mailMessage}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalAlignment="Center"
+                                     Padding="3"
+                                     Foreground="#CFCFCF"
+                                     x:Name="filterValue"
+                                     FontSize="11"/>
+
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Почта"
+                                       Margin="5,0,0,0"
+                                       FontSize="14"
+                                       Foreground="Black"
+                                       Grid.Column="1">
+
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text,ElementName=filterValue}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                        </Grid>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
 </ResourceDictionary>

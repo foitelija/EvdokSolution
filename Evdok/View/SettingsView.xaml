@@ -8,16 +8,86 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1E1E1E">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        
-        <Button Width="250"
-                Height="45"
-                Content="Open"
+        <StackPanel VerticalAlignment="Center"
+                    Margin="15">
+            <StackPanel Orientation="Horizontal" Cursor="Hand" HorizontalAlignment="Center">
+                <!--Открыть стартовый файл-->
+                <TextBlock Text="Путь к отчёту"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="150"/>
+                <TextBox Margin="0,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource ReportTextBox}"/>
+                <Button Width="250"
+                Height="35"
+                Content="Выбрать"
                 BorderThickness="3"
-                Style="{StaticResource OpenReportButtonStyle}"
-                />
+                        Command="{Binding OpenReportCommand}"
+                Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+                <!--Открыть стартовый файл-->
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Папка для CSV"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="150"/>
+                <TextBox Margin="0,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource CsvUrlPath}"/>
 
+                <Button Width="250"
+                Height="35"
+                Content="Выбрать"
+                BorderThickness="3"
+                    Command="{Binding OpenCsvCommand}"
+                Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Номера и почты"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="150"/>
+                <TextBox Margin="0,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource phonesUrlPath}"/>
+
+                <Button Width="250"
+                Height="35"
+                Content="Выбрать"
+                BorderThickness="3"
+                    Command="{Binding OpenPhoneCommand}"
+                Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Почта для писем"
+                       Foreground="White"
+                       FontWeight="Medium"
+                       FontSize="18"
+                       TextWrapping="Wrap"
+                       Margin="0,5,0,0" Height="25" Width="150"/>
+                <TextBox Margin="0,5,30,5"
+                     FontSize="14"
+                     FontWeight="Medium"
+                     Style="{StaticResource mailSendPath}"/>
+                <Button Width="250"
+                Height="35"
+                Content="Сохранить"
+                BorderThickness="3"
+                    Command="{Binding OpenPhoneCommand}"
+                Style="{StaticResource OpenReportButtonStyle}" Cursor="Hand"/>
+            </StackPanel>
+
+        </StackPanel>
+        
     </Grid>
 </UserControl>

@@ -41,7 +41,7 @@ namespace Evdok.ViewModel
         public MainViewModel(IDialogFileController dialogFile, IWorkerController workerService)
         {
             StartViewModel = new StartViewModel();
-            SettingVM = new SettingsViewModel();
+            SettingVM = new SettingsViewModel(dialogFile);
             CurrentView = SettingVM;
             _workerService = workerService;
             _dialogFile = dialogFile;
